@@ -1,7 +1,6 @@
 ﻿var lastCommandSent;
 
 function setupCommands() {
-    // This list is in alphabetical order by commandName
     loadCommands();
     var s = document.getElementById("commands-select");
     for (var j = 0; j < commands.length; j++) {
@@ -32,8 +31,8 @@ function setup()
 	setupHttpMethods();
 }
 
-function checkForIds(str) {
-    var s = document.getElementById("session-select");
+function replaceIdsInPath(str, selectType, tokenToReplace) {
+    var s = document.getElementById(selectType);
     var index = -1;
     if (s.size == 1) {
         index = 0;
@@ -43,11 +42,18 @@ function checkForIds(str) {
     }
 
     if (index >= 0) {
-        var sessionId = document.getElementById("session-select").childNodes[index].value;
-        str = str.replace("SESSION_ID", sessionId);
+        var sessionId = document.getElementById(selectType).childNodes[index].value;
+        str = str.replace(tokenToReplace, sessionId);
     }
 
     return str;
+}
+
+function checkForIds(str)
+{
+	str = replaceIdsInPath(str, "session-select", "SESSION_ID");
+	str = replaceIdsInPath(str, "element-select", "ELEMENT_ID");
+	return str;
 }
 
 function updateCommand() {
@@ -160,6 +166,16 @@ function addSessionId(sessionId) {
     s.size = s.length;
 }
 
+function addElementId(elementId) {
+    var o = document.createElement("option");
+    o.value = elementId;
+    o.innerHTML = elementId;
+
+    var s = document.getElementById("element-select");
+    s.appendChild(o);
+    s.size = s.length;
+}
+
 function processResponse(xmlhttp) {
     logResponse(xmlhttp.status, xmlhttp.responseText);
 
@@ -176,6 +192,15 @@ function processResponse(xmlhttp) {
                     addSessionId(sessionId);
                 }
             }
+			if (lastCommandSent == "findElement")
+			{
+				var elementId = jsonObj.value;
+				if (elementId != "")
+				{
+					addElementId(elementId);
+				}
+				
+			}
             lastCommandSent = "";
         }
         catch (err)
