@@ -6,6 +6,7 @@ function setupCommands() {
     for (var j = 0; j < commands.length; j++) {
         var o = document.createElement("OPTION");
         o.value = commands[j].commandName;
+        o.id = "commands-select-" + commands[j].commandName;
         o.innerHTML = commands[j].commandName;
 
         s.appendChild(o);
@@ -29,6 +30,10 @@ function setup()
 {
 	setupCommands();
 	setupHttpMethods();
+
+    // Defaults to newSession command
+    document.getElementById("commands-select-newSession").selected = true;
+    updateCommand();
 }
 
 function replaceIdsInPath(str, selectType, tokenToReplace) {
