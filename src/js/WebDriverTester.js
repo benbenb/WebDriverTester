@@ -6,6 +6,7 @@ function setupCommands() {
     for (var j = 0; j < commands.length; j++) {
         var o = document.createElement("OPTION");
         o.value = commands[j].commandName;
+        o.id = "commands-select-" + commands[j].commandName;
         o.innerHTML = commands[j].commandName;
 
         s.appendChild(o);
@@ -27,8 +28,12 @@ function setupHttpMethods() {
 
 function setup()
 {
-	setupCommands();
-	setupHttpMethods();
+    setupCommands();
+    setupHttpMethods();
+
+    // Defaults to newSession command
+    document.getElementById("commands-select-newSession").selected = true;
+    updateCommand();
 }
 
 function replaceIdsInPath(str, selectType, tokenToReplace) {
@@ -51,9 +56,9 @@ function replaceIdsInPath(str, selectType, tokenToReplace) {
 
 function checkForIds(str)
 {
-	str = replaceIdsInPath(str, "session-select", "SESSION_ID");
-	str = replaceIdsInPath(str, "element-select", "ELEMENT_ID");
-	return str;
+    str = replaceIdsInPath(str, "session-select", "SESSION_ID");
+    str = replaceIdsInPath(str, "element-select", "ELEMENT_ID");
+    return str;
 }
 
 function updateCommand() {
@@ -192,15 +197,15 @@ function processResponse(xmlhttp) {
                     addSessionId(sessionId);
                 }
             }
-			if (lastCommandSent == "findElement")
-			{
-				var elementId = jsonObj.value;
-				if (elementId != "")
-				{
-					addElementId(elementId);
-				}
-				
-			}
+            if (lastCommandSent == "findElement")
+            {
+                var elementId = jsonObj.value;
+                if (elementId != "")
+                {
+                    addElementId(elementId);
+                }
+                
+            }
             lastCommandSent = "";
         }
         catch (err)
