@@ -28,8 +28,8 @@ function setupHttpMethods() {
 
 function setup()
 {
-	setupCommands();
-	setupHttpMethods();
+    setupCommands();
+    setupHttpMethods();
 
     // Defaults to newSession command
     document.getElementById("commands-select-newSession").selected = true;
@@ -56,9 +56,9 @@ function replaceIdsInPath(str, selectType, tokenToReplace) {
 
 function checkForIds(str)
 {
-	str = replaceIdsInPath(str, "session-select", "SESSION_ID");
-	str = replaceIdsInPath(str, "element-select", "ELEMENT_ID");
-	return str;
+    str = replaceIdsInPath(str, "session-select", "SESSION_ID");
+    str = replaceIdsInPath(str, "element-select", "ELEMENT_ID");
+    return str;
 }
 
 function updateCommand() {
@@ -197,15 +197,15 @@ function processResponse(xmlhttp) {
                     addSessionId(sessionId);
                 }
             }
-			if (lastCommandSent == "findElement")
-			{
-				var elementId = jsonObj.value;
-				if (elementId != "")
-				{
-					addElementId(elementId);
-				}
-				
-			}
+            if (lastCommandSent == "findElement")
+            {
+                var elementId = jsonObj.value;
+                if (elementId != "")
+                {
+                    addElementId(elementId);
+                }
+                
+            }
             lastCommandSent = "";
         }
         catch (err)
