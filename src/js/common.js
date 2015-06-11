@@ -14,6 +14,7 @@ function loadCommands()
     commands.push({ commandName: "newSession", method: "POST", path: "/session", requestBody: "{\"desiredCapabilities\":{ \"browserName\":\"<browserName>\", \"browserVersion\":\"<browserVersion>\", \"platformName\":\"Windows NT\", \"platformVersion\":\"10\"},\"requiredCapabilities\":{}}" });
     commands.push({ commandName: "sessions", method: "GET", path: "/sessions", requestBody: "" });
     commands.push({ commandName: "status", method: "GET", path: "/status", requestBody: "" });
+    commands.push({ commandName: "url", method: "POST", path: "/session/SESSION_ID/url", requestBody: "{\"url\":\"http://bing.com\"}" });
     commands.push({ commandName: "quit", method: "DELETE", path: "/session/SESSION_ID", requestBody: "" });
 }
 
