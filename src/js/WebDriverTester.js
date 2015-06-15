@@ -129,7 +129,7 @@ function logResponse(status, contentBody) {
     if (contentBody != "") {
         try {
             var jsonObj = JSON.parse(contentBody);
-            if (lastCommandSent == "screenshot" && status == 200) {
+            if ((lastCommandSent == "screenshot" || lastCommandSent == "getElementScreenshot") && status == 200) {
                 var imgBase64 = jsonObj.value;
                 jsonObj.value = "<img src='data:image/png;base64," + imgBase64 + "' />";
             }
