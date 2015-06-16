@@ -7,7 +7,7 @@ function loadCommands()
     commands = [];
     commands.push({ commandName: "clear", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/clear", requestBody: "" });
     commands.push({ commandName: "click", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/click", requestBody: "{\"id\":\"ELEMENT_ID\"}" });
-    commands.push({ commandName: "sendKeys", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/AbcdE", requestBody: "" });
+    commands.push({ commandName: "sendKeys", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/value", requestBody: "{\"keysToSend\": [\"a\", \"b\", \"c\"]}" });
     commands.push({ commandName: "executeScript", method: "POST", path: "/session/SESSION_ID/execute", requestBody: "{\"script\": \"return arguments[0].second;\",\"args\": [{\"first\":\"1st\", \"second\":\"2nd\", \"third\":\"3rd\"}]}" });
     commands.push({ commandName: "findElement", method: "POST", path: "/session/SESSION_ID/element", requestBody: "{\"locator\": \"id\",\"value\": \"clickAnchorElement\"}" });
     commands.push({ commandName: "findElements", method: "POST", path: "/session/SESSION_ID/elements", requestBody: "{\"locator\": \"id\",\"value\": \"clickAnchorElement\"}" });
