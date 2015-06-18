@@ -225,7 +225,11 @@ function sendRequest() {
     var portNumber = document.getElementById("port").value;
     if (portNumber > 1024 && portNumber <= 65531) {
         var path = document.getElementById("path").value;
-        var url = "http://localhost:" + portNumber + path;
+        var host = "http://localhost";
+        if (document.getElementById("host").value) {
+            host = document.getElementById("host").value;
+        }
+        var url = host + ":" + portNumber + path;
         var requestBody = document.getElementById("content-area").value;
         var method = document.getElementById("methods-select").value;
         logRequest(method, url, requestBody);
