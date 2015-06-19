@@ -16,6 +16,7 @@ function loadCommands()
     commands.push({ commandName: "findElement", method: "POST", path: "/session/SESSION_ID/element", requestBody: "{\"locator\": \"id\",\"value\": \"clickAnchorElement\"}" });
     commands.push({ commandName: "findElements", method: "POST", path: "/session/SESSION_ID/elements", requestBody: "{\"locator\": \"id\",\"value\": \"clickAnchorElement\"}" });
     commands.push({ commandName: "getCapabilities", method: "GET", path: "/session/SESSION_ID", requestBody: "" });
+    commands.push({ commandName: "getCookie", method: "GET", path: "/session/SESSION_ID/cookie/myCookie", requestBody: "" });
     commands.push({ commandName: "getCookies", method: "GET", path: "/session/SESSION_ID/cookie", requestBody: "" });
     commands.push({ commandName: "getCssValue", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/css/:propertyName", requestBody: "" });
     commands.push({ commandName: "getCurrentUrl", method: "GET", path: "/session/SESSION_ID/url", requestBody: "" });
