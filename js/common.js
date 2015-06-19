@@ -5,7 +5,7 @@ var commands;
 function loadCommands()
 {
     commands = [];
-    commands.push({ commandName: "addCookie", method: "POST", path: "/session/SESSION_ID/cookie", requestBody: "{\"name\":\"myCookie\", \"value\":\"C is for COOKIE!!\"}" });
+    commands.push({ commandName: "addCookie", method: "POST", path: "/session/SESSION_ID/cookie", requestBody: "{\"cookie\":{\"name\":\"myCookie\", \"value\":\"C is for COOKIE!!\"}}" });
     commands.push({ commandName: "clear", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/clear", requestBody: "" });
     commands.push({ commandName: "click", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/click", requestBody: "{\"id\":\"ELEMENT_ID\"}" });
     commands.push({ commandName: "deleteCookie", method: "DELETE", path: "/session/SESSION_ID/cookie/myCookie", requestBody: "" });
