@@ -30,6 +30,7 @@ function setup()
 {
     setupCommands();
     setupHttpMethods();
+    loadResponseCodeMap();
 
     // Defaults to newSession command
     document.getElementById("commands-select-newSession").selected = true;
@@ -133,6 +134,9 @@ function logResponse(status, contentBody) {
                 var imgBase64 = jsonObj.value;
                 jsonObj.value = "<img src='data:image/png;base64," + imgBase64 + "' />";
             }
+
+            lResponse += "<p>Response code " + jsonObj.status + " indicates: " + responseCodeMap.get(jsonObj.status) + "</p>"
+
             var jsonString = JSON.stringify(jsonObj, null, 4);
 
             lResponse += "<pre>" + jsonString + "</pre>";
@@ -204,7 +208,7 @@ function processResponse(xmlhttp) {
             }
             if (lastCommandSent == "findElement")
             {
-                var elementId = jsonObj.value;
+                var elementId = jsonObj.value.id;
                 if (elementId != "")
                 {
                     addElementId(elementId);
