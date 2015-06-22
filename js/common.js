@@ -48,3 +48,37 @@ function getTimeString() {
 
     return datetime;
 }
+
+var responseCodeMap = new Map();
+function loadResponseCodeMap() {
+    responseCodeMap.set(-1, "Invalid");
+    responseCodeMap.set(0, "Success");
+    responseCodeMap.set(6, "NoSuchDriver");
+    responseCodeMap.set(7, "NoSuchElement");
+    responseCodeMap.set(8, "NoSuchFrame");
+    responseCodeMap.set(9, "UnknownCommand");
+    responseCodeMap.set(10, "StaleElementReference");
+    responseCodeMap.set(11, "ElementNotVisible");
+    responseCodeMap.set(12, "InvalidElementState");
+    responseCodeMap.set(13, "UnknownError");
+    responseCodeMap.set(15, "ElementIsNotSelectable");
+    responseCodeMap.set(17, "JavaScriptError");
+    responseCodeMap.set(19, "XPathLookupError");
+    responseCodeMap.set(21, "Timeout");
+    responseCodeMap.set(23, "NoSuchWindow");
+    responseCodeMap.set(24, "InvalidCookieDomain");
+    responseCodeMap.set(25, "UnableToSetCookie");
+    responseCodeMap.set(26, "UnexpectedAlertOpen");
+    responseCodeMap.set(27, "NoAlertOpenError");
+    responseCodeMap.set(28, "ScriptTimeout");
+    responseCodeMap.set(29, "InvalidElementCoordinates");
+    responseCodeMap.set(30, "IMENotAvailable");
+    responseCodeMap.set(31, "IMEEngineActivationFailed");
+    responseCodeMap.set(32, "InvalidSelector");
+    responseCodeMap.set(33, "SessionNotCreatedException");
+    responseCodeMap.set(34, "MoveTargetOutOfBounds");
+    responseCodeMap.set(40, "UnsupportedOperation");
+    responseCodeMap.set(41, "UnableToTakeScreenshot");
+    responseCodeMap.set(42, "NotImplemented");
+    responseCodeMap.set(43, "InvalidArgument");
+}
