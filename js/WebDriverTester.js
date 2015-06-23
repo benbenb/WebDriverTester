@@ -37,6 +37,13 @@ function setup()
     updateCommand();
 }
 
+function quickCommand(cmd)
+{
+    var strOption = "commands-select-" + cmd;
+    document.getElementById(strOption).selected = true;
+    updateCommand();
+}
+
 function replaceIdsInPath(str, selectType, tokenToReplace) {
     var s = document.getElementById(selectType);
     var index = -1;
@@ -170,6 +177,16 @@ function clearLog() {
     document.getElementById("log-contents").innerHTML = "";
 }
 
+function clearSessionsAndElements() {
+    document.getElementById("session-select").innerHTML = "";
+    document.getElementById("element-select").innerHTML = "";
+}
+
+function clearAll() {
+    clearSessionsAndElements();
+    clearLog();
+}
+
 function addSessionId(sessionId) {
     var o = document.createElement("option");
     o.value = sessionId;
@@ -178,6 +195,7 @@ function addSessionId(sessionId) {
     var s = document.getElementById("session-select");
     s.appendChild(o);
     s.size = s.length;
+    s.selectedIndex = s.length - 1;
 }
 
 function addElementId(elementId) {
@@ -188,6 +206,7 @@ function addElementId(elementId) {
     var s = document.getElementById("element-select");
     s.appendChild(o);
     s.size = s.length;
+    s.selectedIndex = s.length - 1;
 }
 
 function processResponse(xmlhttp) {

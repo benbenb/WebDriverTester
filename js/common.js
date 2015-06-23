@@ -7,7 +7,7 @@ function loadCommands()
     commands = [];
     commands.push({ commandName: "addCookie", method: "POST", path: "/session/SESSION_ID/cookie", requestBody: "{\"cookie\":{\"name\":\"myCookie\", \"value\":\"C is for COOKIE!!\"}}" });
     commands.push({ commandName: "clear", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/clear", requestBody: "" });
-    commands.push({ commandName: "click", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/click", requestBody: "{\"id\":\"ELEMENT_ID\"}" });
+    commands.push({ commandName: "click", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/click", requestBody: "" });
     commands.push({ commandName: "deleteCookie", method: "DELETE", path: "/session/SESSION_ID/cookie/myCookie", requestBody: "" });
     commands.push({ commandName: "deleteCookies", method: "DELETE", path: "/session/SESSION_ID/cookie", requestBody: "" });
     commands.push({ commandName: "executeScript", method: "POST", path: "/session/SESSION_ID/execute", requestBody: "{\"script\": \"return arguments[0].second;\",\"args\": [{\"first\":\"1st\", \"second\":\"2nd\", \"third\":\"3rd\"}]}" });
@@ -15,6 +15,7 @@ function loadCommands()
         requestBody: "{\"script\": \"arguments[1]([ document.getElementsByTagName('div'), 1, 'fancy string', 1.2, {objProp: 3}]);\",\"args\": [{\"first\":\"1st\", \"second\":\"2nd\", \"third\":\"3rd\"}]}" });
     commands.push({ commandName: "findElement", method: "POST", path: "/session/SESSION_ID/element", requestBody: "{\"locator\": \"id\",\"value\": \"clickAnchorElement\"}" });
     commands.push({ commandName: "findElements", method: "POST", path: "/session/SESSION_ID/elements", requestBody: "{\"locator\": \"id\",\"value\": \"clickAnchorElement\"}" });
+    commands.push({ commandName: "get", method: "POST", path: "/session/SESSION_ID/url", requestBody: "{\"url\":\"http://www.bing.com\"}" });
     commands.push({ commandName: "getCapabilities", method: "GET", path: "/session/SESSION_ID", requestBody: "" });
     commands.push({ commandName: "getCookie", method: "GET", path: "/session/SESSION_ID/cookie/myCookie", requestBody: "" });
     commands.push({ commandName: "getCookies", method: "GET", path: "/session/SESSION_ID/cookie", requestBody: "" });
@@ -34,7 +35,6 @@ function loadCommands()
     commands.push({ commandName: "sendKeys", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/value", requestBody: "{\"value\": [\"a\", \"b\", \"c\"]}" });    
     commands.push({ commandName: "sessions", method: "GET", path: "/sessions", requestBody: "" });
     commands.push({ commandName: "status", method: "GET", path: "/status", requestBody: "" });
-    commands.push({ commandName: "url", method: "POST", path: "/session/SESSION_ID/url", requestBody: "{\"url\":\"http://bing.com\"}" });
 }
 
 function getTimeString() {
