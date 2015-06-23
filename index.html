@@ -38,21 +38,18 @@
         </div>
     </nav>
 
-
-    <!-- Request Info -->
-    <div class="container">
-        <div class="explanation">
-            <h1>Send a Request</h1>
-            <p class="lead">To send a request to Spartan, specify a port and a command. Modify the command if needed and hit the "Send Request" button.</p>
-        </div>
-    </div><!-- /.container -->
-
     <!-- Request Info Contents -->
     <div class="container">
         <div class="request-info">
             <h2>Request</h2>
+            <p>To send a request to Edge, specify a port and a command. Modify the command if needed and hit the "Send Request" button.</p>
             <p>URL or IP (if left blank will use "http://localhost"): <input id="host" type="text" name="host"></p>
             <p>Port: <input id="port" type="text" name="port" value="17556"></p>
+            <p>Quick commands: 
+                <a onclick="quickCommand('get')">get</a> 
+                <a onclick="quickCommand('findElement')">findElement</a>
+                <a onclick="quickCommand('screenshot')">screenshot</a>
+            </p>
             <p>Command: <select id="commands-select" onchange="updateCommand()"></select></p>
             <p>Method: <select id="methods-select"></select></p>
             <p>Path: <input id="path" type="text"></p>
@@ -70,8 +67,8 @@
                 <br>
             </p>
             <textarea id="content-area"></textarea><br>
-            <p>Sessions <select class="guid-select" id="session-select"></select></p>
-            <p>Elements <select class="guid-select" id="element-select"></select></p>
+            <p>Sessions <select onchange="updateCommand()" class="guid-select" id="session-select"></select></p>
+            <p>Elements <select onchange="updateCommand()" class="guid-select" id="element-select"></select></p>
         </div>
     </div><!-- /.container -->
 
@@ -79,6 +76,8 @@
     <div id="log-div" class="container">
         <h2>Log</h2>  
         <button onclick="clearLog()">Clear Log</button>
+        <button onclick="clearSessionsAndElements()">Clear Ids</button>
+        <button onclick="clearAll()">Clear All</button>
         <div id="log-contents"></div>          
     </div><!-- /.container -->
 
