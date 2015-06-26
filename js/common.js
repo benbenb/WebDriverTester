@@ -13,8 +13,8 @@ function loadCommands()
     commands.push({ commandName: "executeScript", method: "POST", path: "/session/SESSION_ID/execute", requestBody: "{\"script\": \"return arguments[0].second;\",\"args\": [{\"first\":\"1st\", \"second\":\"2nd\", \"third\":\"3rd\"}]}" });
     commands.push({ commandName: "executeScriptAsync", method: "POST", path: "/session/SESSION_ID/execute_async", 
         requestBody: "{\"script\": \"arguments[1]([ document.getElementsByTagName('div'), 1, 'fancy string', 1.2, {objProp: 3}]);\",\"args\": [{\"first\":\"1st\", \"second\":\"2nd\", \"third\":\"3rd\"}]}" });
-    commands.push({ commandName: "findElement", method: "POST", path: "/session/SESSION_ID/element", requestBody: "{\"locator\": \"id\",\"value\": \"clickAnchorElement\"}" });
-    commands.push({ commandName: "findElements", method: "POST", path: "/session/SESSION_ID/elements", requestBody: "{\"locator\": \"id\",\"value\": \"clickAnchorElement\"}" });
+    commands.push({ commandName: "findElement", method: "POST", path: "/session/SESSION_ID/element", requestBody: "{\"using\": \"id\",\"value\": \"clickAnchorElement\"}" });
+    commands.push({ commandName: "findElements", method: "POST", path: "/session/SESSION_ID/elements", requestBody: "{\"using\": \"id\",\"value\": \"clickAnchorElement\"}" });
     commands.push({ commandName: "get", method: "POST", path: "/session/SESSION_ID/url", requestBody: "{\"url\":\"http://www.bing.com\"}" });
     commands.push({ commandName: "getCapabilities", method: "GET", path: "/session/SESSION_ID", requestBody: "" });
     commands.push({ commandName: "getCookie", method: "GET", path: "/session/SESSION_ID/cookie/myCookie", requestBody: "" });
