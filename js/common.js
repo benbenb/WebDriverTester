@@ -36,7 +36,7 @@ function loadCommands()
     commands.push({ commandName: "quit", method: "DELETE", path: "/session/SESSION_ID", requestBody: "" });
     commands.push({ commandName: "screenshot", method: "GET", path: "/session/SESSION_ID/screenshot", requestBody: "" });
     commands.push({ commandName: "sendKeys", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/value", requestBody: "{\"value\": [\"a\", \"b\", \"c\"]}" });
-    commands.push({ commandName: "sendKeysToPrompt", method: "POST", path: "/session/SESSION_ID/alert_text", requestBody: "{\"text\": [\"cheese\"]}" });
+    commands.push({ commandName: "sendKeysToPrompt", method: "POST", path: "/session/SESSION_ID/alert_text", requestBody: "{\"text\": \"cheese\"}" });
     commands.push({ commandName: "sessions", method: "GET", path: "/sessions", requestBody: "" });
     commands.push({ commandName: "status", method: "GET", path: "/status", requestBody: "" });
 }
