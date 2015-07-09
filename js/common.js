@@ -39,6 +39,7 @@ function loadCommands()
     commands.push({ commandName: "sendKeysToPrompt", method: "POST", path: "/session/SESSION_ID/alert_text", requestBody: "{\"text\": \"cheese\"}" });
     commands.push({ commandName: "sessions", method: "GET", path: "/sessions", requestBody: "" });
     commands.push({ commandName: "status", method: "GET", path: "/status", requestBody: "" });
+    commands.push({ commandName: "timeouts", method: "POST", path: "/session/SESSION_ID/timeouts", requestBody: "{\"type\": \"script\", \"ms\": 30000 }" });
 }
 
 function getTimeString() {
