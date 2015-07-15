@@ -29,15 +29,22 @@ function loadCommands()
     commands.push({ commandName: "getElementTagName", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/name", requestBody: "" });
     commands.push({ commandName: "getElementText", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/text", requestBody: "" });
     commands.push({ commandName: "getTitle", method: "GET", path: "/session/SESSION_ID/title", requestBody: "" });
+    commands.push({ commandName: "getWindowHandle", method: "GET", path: "/session/SESSION_ID/window_handle", requestBody: "" });
+    commands.push({ commandName: "getWindowHandles", method: "GET", path: "/session/SESSION_ID/window_handles", requestBody: "" });
+    commands.push({ commandName: "getWindowPosition", method: "GET", path: "/session/SESSION_ID/window/current/position", requestBody: "" });
+    commands.push({ commandName: "getWindowSize", method: "GET", path: "/session/SESSION_ID/window/current/size", requestBody: "" });
     commands.push({ commandName: "isDisplayed", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/displayed", requestBody: "" });
     commands.push({ commandName: "isEnabled", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/enabled", requestBody: "" });
     commands.push({ commandName: "isSelected", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/selected", requestBody: "" });
+    commands.push({ commandName: "maximizeWindow", method: "POST", path: "/session/SESSION_ID/window/current/maximize", requestBody: "" });
     commands.push({ commandName: "newSession", method: "POST", path: "/session", requestBody: "{\"desiredCapabilities\":{ \"browserName\":\"<browserName>\", \"browserVersion\":\"<browserVersion>\", \"platformName\":\"Windows NT\", \"platformVersion\":\"10\"},\"requiredCapabilities\":{}}" });
     commands.push({ commandName: "quit", method: "DELETE", path: "/session/SESSION_ID", requestBody: "" });
     commands.push({ commandName: "screenshot", method: "GET", path: "/session/SESSION_ID/screenshot", requestBody: "" });
     commands.push({ commandName: "sendKeys", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/value", requestBody: "{\"value\": [\"a\", \"b\", \"c\"]}" });
     commands.push({ commandName: "sendKeysToPrompt", method: "POST", path: "/session/SESSION_ID/alert_text", requestBody: "{\"text\": \"cheese\"}" });
     commands.push({ commandName: "sessions", method: "GET", path: "/sessions", requestBody: "" });
+    commands.push({ commandName: "setWindowPosition", method: "POST", path: "/session/SESSION_ID/window/current/position", requestBody: "{\"x\": 100, \"y\": 100}" });
+    commands.push({ commandName: "setWindowSize", method: "POST", path: "/session/SESSION_ID/window/current/size", requestBody: "{\"width\": 500, \"height\": 500}" });
     commands.push({ commandName: "status", method: "GET", path: "/status", requestBody: "" });
 }
 
