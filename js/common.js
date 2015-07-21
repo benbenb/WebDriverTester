@@ -18,6 +18,7 @@ function loadCommands()
     commands.push({ commandName: "findElement", method: "POST", path: "/session/SESSION_ID/element", requestBody: "{\"using\": \"id\",\"value\": \"clickAnchorElement\"}" });
     commands.push({ commandName: "findElements", method: "POST", path: "/session/SESSION_ID/elements", requestBody: "{\"using\": \"id\",\"value\": \"clickAnchorElement\"}" });
     commands.push({ commandName: "get", method: "POST", path: "/session/SESSION_ID/url", requestBody: "{\"url\":\"http://www.bing.com\"}" });
+    commands.push({ commandName: "getActiveElement", method: "GET", path: "/session/SESSION_ID/element/active", requestBody: "" });
     commands.push({ commandName: "getAlertText", method: "GET", path: "/session/SESSION_ID/alert_text", requestBody: "" });
     commands.push({ commandName: "getCapabilities", method: "GET", path: "/session/SESSION_ID", requestBody: "" });
     commands.push({ commandName: "getCookie", method: "GET", path: "/session/SESSION_ID/cookie/myCookie", requestBody: "" });
@@ -25,9 +26,13 @@ function loadCommands()
     commands.push({ commandName: "getCssValue", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/css/:propertyName", requestBody: "" });
     commands.push({ commandName: "getCurrentUrl", method: "GET", path: "/session/SESSION_ID/url", requestBody: "" });
     commands.push({ commandName: "getElementAttribute", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/attribute/:name", requestBody: "" });
+    commands.push({ commandName: "getElementEquals", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/equals/OTHER_ELEMENT_ID", requestBody: "" });
+    commands.push({ commandName: "getElementRect", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/rect", requestBody: "" });
     commands.push({ commandName: "getElementScreenshot", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/screenshot", requestBody: "" });
     commands.push({ commandName: "getElementTagName", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/name", requestBody: "" });
     commands.push({ commandName: "getElementText", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/text", requestBody: "" });
+    commands.push({ commandName: "getLocation", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/location", requestBody: "" });
+    commands.push({ commandName: "getLocationInView", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/location_in_view", requestBody: "" });
     commands.push({ commandName: "getTitle", method: "GET", path: "/session/SESSION_ID/title", requestBody: "" });
     commands.push({ commandName: "getWindowHandle", method: "GET", path: "/session/SESSION_ID/window_handle", requestBody: "" });
     commands.push({ commandName: "getWindowHandles", method: "GET", path: "/session/SESSION_ID/window_handles", requestBody: "" });
@@ -46,6 +51,8 @@ function loadCommands()
     commands.push({ commandName: "setWindowPosition", method: "POST", path: "/session/SESSION_ID/window/current/position", requestBody: "{\"x\": 100, \"y\": 100}" });
     commands.push({ commandName: "setWindowSize", method: "POST", path: "/session/SESSION_ID/window/current/size", requestBody: "{\"width\": 500, \"height\": 500}" });
     commands.push({ commandName: "status", method: "GET", path: "/status", requestBody: "" });
+    commands.push({ commandName: "submitForm", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/submit", requestBody: "" });
+    commands.push({ commandName: "timeoutsImplicitWait", method: "POST", path: "/session/SESSION_ID/timeouts/implicit_wait", requestBody: "{\"ms\":5000}" });
     commands.push({ commandName: "timeouts", method: "POST", path: "/session/SESSION_ID/timeouts", requestBody: "{\"type\": \"script\", \"ms\": 30000 }" });
 }
 

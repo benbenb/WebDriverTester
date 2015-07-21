@@ -227,7 +227,7 @@ function processResponse(xmlhttp) {
             }
             if (lastCommandSent == "findElement")
             {
-                var elementId = jsonObj.value.id;
+                var elementId = jsonObj.value.ELEMENT;
                 if (elementId != "")
                 {
                     addElementId(elementId);
