@@ -11,6 +11,10 @@ function loadCommands()
     commands.push({ commandName: "click", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/click", requestBody: "" });
     commands.push({ commandName: "deleteCookie", method: "DELETE", path: "/session/SESSION_ID/cookie/myCookie", requestBody: "" });
     commands.push({ commandName: "deleteCookies", method: "DELETE", path: "/session/SESSION_ID/cookie", requestBody: "" });
+    commands.push({ commandName: "deleteLocalStorage", method: "DELETE", path: "/session/SESSION_ID/local_storage", requestBody: "" });
+    commands.push({ commandName: "deleteLocalStorageKey", method: "DELETE", path: "/session/:sessionId/session_storage/key/:key", requestBody: "" });
+    commands.push({ commandName: "deleteSessionStorage", method: "DELETE", path: "/session/SESSION_ID/session_storage", requestBody: "" });
+    commands.push({ commandName: "deleteSessionStorageKey", method: "DELETE", path: "/session/:sessionId/session_storage/key/:key", requestBody: "" });   
     commands.push({ commandName: "dismissAlert", method: "POST", path: "/session/SESSION_ID/dismiss_alert", requestBody: "" });
     commands.push({ commandName: "executeScript", method: "POST", path: "/session/SESSION_ID/execute", requestBody: "{\"script\": \"return arguments[0].second;\",\"args\": [{\"first\":\"1st\", \"second\":\"2nd\", \"third\":\"3rd\"}]}" });
     commands.push({ commandName: "executeScriptAsync", method: "POST", path: "/session/SESSION_ID/execute_async",
@@ -33,6 +37,12 @@ function loadCommands()
     commands.push({ commandName: "getElementText", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/text", requestBody: "" });
     commands.push({ commandName: "getLocation", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/location", requestBody: "" });
     commands.push({ commandName: "getLocationInView", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/location_in_view", requestBody: "" });
+    commands.push({ commandName: "getLocalStorageKeys", method: "GET", path: "/session/SESSION_ID/local_storage", requestBody: "" });
+    commands.push({ commandName: "getLocalStorageSize", method: "GET", path: "/session/:sessionId/local_storage/size", requestBody: "" });
+    commands.push({ commandName: "getLocalStorageKey", method: "GET", path: "/session/:sessionId/local_storage/key/:key", requestBody: "" });
+    commands.push({ commandName: "getSessionStorageKeys", method: "GET", path: "/session/SESSION_ID/session_storage", requestBody: "" });
+    commands.push({ commandName: "getSessionStorageSize", method: "GET", path: "/session/:sessionId/session_storage/size", requestBody: "" });
+    commands.push({ commandName: "getSessionStorageKey", method: "GET", path: "/session/:sessionId/session_storage/key/:key", requestBody: "" });
     commands.push({ commandName: "getTitle", method: "GET", path: "/session/SESSION_ID/title", requestBody: "" });
     commands.push({ commandName: "getWindowHandle", method: "GET", path: "/session/SESSION_ID/window_handle", requestBody: "" });
     commands.push({ commandName: "getWindowHandles", method: "GET", path: "/session/SESSION_ID/window_handles", requestBody: "" });
@@ -48,6 +58,8 @@ function loadCommands()
     commands.push({ commandName: "sendKeys", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/value", requestBody: "{\"value\": [\"a\", \"b\", \"c\"]}" });
     commands.push({ commandName: "sendKeysToPrompt", method: "POST", path: "/session/SESSION_ID/alert_text", requestBody: "{\"text\": \"cheese\"}" });
     commands.push({ commandName: "sessions", method: "GET", path: "/sessions", requestBody: "" });
+    commands.push({ commandName: "setLocalStorageKey", method: "POST", path: "/session/SESSION_ID/local_storage", requestBody: "{key: \"a\", value: \"b\"}" });
+    commands.push({ commandName: "setSessionStorageKey", method: "POST", path: "/session/SESSION_ID/session_storage", requestBody: "{key: \"a\", value: \"b\"}" });
     commands.push({ commandName: "setWindowPosition", method: "POST", path: "/session/SESSION_ID/window/current/position", requestBody: "{\"x\": 100, \"y\": 100}" });
     commands.push({ commandName: "setWindowSize", method: "POST", path: "/session/SESSION_ID/window/current/size", requestBody: "{\"width\": 500, \"height\": 500}" });
     commands.push({ commandName: "status", method: "GET", path: "/status", requestBody: "" });
