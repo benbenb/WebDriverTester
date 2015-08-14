@@ -20,7 +20,9 @@ function loadCommands()
     commands.push({ commandName: "executeScriptAsync", method: "POST", path: "/session/SESSION_ID/execute_async",
         requestBody: "{\"script\": \"arguments[1]([ document.getElementsByTagName('div'), 1, 'fancy string', 1.2, {objProp: 3}]);\",\"args\": [{\"first\":\"1st\", \"second\":\"2nd\", \"third\":\"3rd\"}]}" });
     commands.push({ commandName: "findElement", method: "POST", path: "/session/SESSION_ID/element", requestBody: "{\"using\": \"id\",\"value\": \"clickAnchorElement\"}" });
+    commands.push({ commandName: "findElementFrom", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/element", requestBody: "{\"using\": \"id\",\"value\": \"clickAnchorElement\"}" });
     commands.push({ commandName: "findElements", method: "POST", path: "/session/SESSION_ID/elements", requestBody: "{\"using\": \"id\",\"value\": \"clickAnchorElement\"}" });
+    commands.push({ commandName: "findElementsFrom", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/elements", requestBody: "{\"using\": \"id\",\"value\": \"clickAnchorElement\"}" });
     commands.push({ commandName: "get", method: "POST", path: "/session/SESSION_ID/url", requestBody: "{\"url\":\"http://www.bing.com\"}" });
     commands.push({ commandName: "getActiveElement", method: "GET", path: "/session/SESSION_ID/element/active", requestBody: "" });
     commands.push({ commandName: "getAlertText", method: "GET", path: "/session/SESSION_ID/alert_text", requestBody: "" });
@@ -29,10 +31,11 @@ function loadCommands()
     commands.push({ commandName: "getCookies", method: "GET", path: "/session/SESSION_ID/cookie", requestBody: "" });
     commands.push({ commandName: "getCssValue", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/css/:propertyName", requestBody: "" });
     commands.push({ commandName: "getCurrentUrl", method: "GET", path: "/session/SESSION_ID/url", requestBody: "" });
-    commands.push({ commandName: "getElementAttribute", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/attribute/:name", requestBody: "" });
+    commands.push({ commandName: "getElementAttribute", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/attribute/innerHTML", requestBody: "" });
     commands.push({ commandName: "getElementEquals", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/equals/OTHER_ELEMENT_ID", requestBody: "" });
     commands.push({ commandName: "getElementRect", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/rect", requestBody: "" });
     commands.push({ commandName: "getElementScreenshot", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/screenshot", requestBody: "" });
+    commands.push({ commandName: "getElementSize", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/size", requestBody: "" });
     commands.push({ commandName: "getElementTagName", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/name", requestBody: "" });
     commands.push({ commandName: "getElementText", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/text", requestBody: "" });
     commands.push({ commandName: "getLocation", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/location", requestBody: "" });
@@ -40,6 +43,7 @@ function loadCommands()
     commands.push({ commandName: "getLocalStorageKeys", method: "GET", path: "/session/SESSION_ID/local_storage", requestBody: "" });
     commands.push({ commandName: "getLocalStorageSize", method: "GET", path: "/session/:sessionId/local_storage/size", requestBody: "" });
     commands.push({ commandName: "getLocalStorageKey", method: "GET", path: "/session/:sessionId/local_storage/key/:key", requestBody: "" });
+    commands.push({ commandName: "getPageSource", method: "GET", path: "/session/SESSION_ID/source", requestBody: "" });
     commands.push({ commandName: "getSessionStorageKeys", method: "GET", path: "/session/SESSION_ID/session_storage", requestBody: "" });
     commands.push({ commandName: "getSessionStorageSize", method: "GET", path: "/session/:sessionId/session_storage/size", requestBody: "" });
     commands.push({ commandName: "getSessionStorageKey", method: "GET", path: "/session/:sessionId/session_storage/key/:key", requestBody: "" });
