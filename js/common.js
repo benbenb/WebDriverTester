@@ -66,6 +66,7 @@ function loadCommands()
     commands.push({ commandName: "setSessionStorageKey", method: "POST", path: "/session/SESSION_ID/session_storage", requestBody: "{key: \"a\", value: \"b\"}" });
     commands.push({ commandName: "setWindowPosition", method: "POST", path: "/session/SESSION_ID/window/current/position", requestBody: "{\"x\": 100, \"y\": 100}" });
     commands.push({ commandName: "setWindowSize", method: "POST", path: "/session/SESSION_ID/window/current/size", requestBody: "{\"width\": 500, \"height\": 500}" });
+    commands.push({ commandName: "switchToWindow", method: "POST", path: "/session/SESSION_ID/window", requestBody: "{\"window_handle\":\"\"}" });
     commands.push({ commandName: "status", method: "GET", path: "/status", requestBody: "" });
     commands.push({ commandName: "submitForm", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/submit", requestBody: "" });
     commands.push({ commandName: "timeoutsImplicitWait", method: "POST", path: "/session/SESSION_ID/timeouts/implicit_wait", requestBody: "{\"ms\":5000}" });
