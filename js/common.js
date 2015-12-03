@@ -56,6 +56,7 @@ function loadCommands()
     commands.push({ commandName: "isEnabled", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/enabled", requestBody: "" });
     commands.push({ commandName: "isSelected", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/selected", requestBody: "" });
     commands.push({ commandName: "maximizeWindow", method: "POST", path: "/session/SESSION_ID/window/current/maximize", requestBody: "" });
+    commands.push({ commandName: "moveTo", method: "POST", path: "/session/SESSION_ID/moveTo", requestBody: "{\"element\": \"ELEMENT_ID\",\"xoffset\": 0,\"yoffset\": 0}" });
     commands.push({ commandName: "newSession", method: "POST", path: "/session", requestBody: "{\"desiredCapabilities\":{ \"browserName\":\"<browserName>\", \"browserVersion\":\"<browserVersion>\", \"platformName\":\"Windows NT\", \"platformVersion\":\"10\"},\"requiredCapabilities\":{}}" });
     commands.push({ commandName: "quit", method: "DELETE", path: "/session/SESSION_ID", requestBody: "" });
     commands.push({ commandName: "screenshot", method: "GET", path: "/session/SESSION_ID/screenshot", requestBody: "" });
@@ -66,7 +67,7 @@ function loadCommands()
     commands.push({ commandName: "setSessionStorageKey", method: "POST", path: "/session/SESSION_ID/session_storage", requestBody: "{key: \"a\", value: \"b\"}" });
     commands.push({ commandName: "setWindowPosition", method: "POST", path: "/session/SESSION_ID/window/current/position", requestBody: "{\"x\": 100, \"y\": 100}" });
     commands.push({ commandName: "setWindowSize", method: "POST", path: "/session/SESSION_ID/window/current/size", requestBody: "{\"width\": 500, \"height\": 500}" });
-    commands.push({ commandName: "switchToWindow", method: "POST", path: "/session/SESSION_ID/window", requestBody: "{\"window_handle\":\"\"}" });
+    commands.push({ commandName: "switchToWindow", method: "POST", path: "/session/SESSION_ID/window", requestBody: "{\"handle\":\"\"}" });
     commands.push({ commandName: "status", method: "GET", path: "/status", requestBody: "" });
     commands.push({ commandName: "submitForm", method: "POST", path: "/session/SESSION_ID/element/ELEMENT_ID/submit", requestBody: "" });
     commands.push({ commandName: "timeoutsImplicitWait", method: "POST", path: "/session/SESSION_ID/timeouts/implicit_wait", requestBody: "{\"ms\":5000}" });
