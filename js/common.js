@@ -56,7 +56,7 @@ function loadCommands()
     commands.push({ commandName: "isEnabled", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/enabled", requestBody: "" });
     commands.push({ commandName: "isSelected", method: "GET", path: "/session/SESSION_ID/element/ELEMENT_ID/selected", requestBody: "" });
     commands.push({ commandName: "maximizeWindow", method: "POST", path: "/session/SESSION_ID/window/current/maximize", requestBody: "" });
-    commands.push({ commandName: "moveTo", method: "POST", path: "/session/SESSION_ID/moveTo", requestBody: "{\"element\": \"ELEMENT_ID\",\"xoffset\": 0,\"yoffset\": 0}" });
+    commands.push({ commandName: "moveTo", method: "POST", path: "/session/SESSION_ID/moveto", requestBody: "{\"element\": \"ELEMENT_ID\",\"xoffset\": 0,\"yoffset\": 0}" });
     commands.push({ commandName: "newSession", method: "POST", path: "/session", requestBody: "{\"desiredCapabilities\":{ \"browserName\":\"<browserName>\", \"browserVersion\":\"<browserVersion>\", \"platformName\":\"Windows NT\", \"platformVersion\":\"10\"},\"requiredCapabilities\":{}}" });
     commands.push({ commandName: "quit", method: "DELETE", path: "/session/SESSION_ID", requestBody: "" });
     commands.push({ commandName: "screenshot", method: "GET", path: "/session/SESSION_ID/screenshot", requestBody: "" });
